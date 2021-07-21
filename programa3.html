@@ -1,0 +1,29 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = 'red';
+    pincel.fillRect(400, 0, 200, 400);
+
+    pincel.fillStyle = 'yellow';
+    pincel.beginPath();
+    /*Atribui um caminho ao pincel (começa um caminho)*/
+    pincel.moveTo(300, 200);
+    /*Indica o ponto de início ao pincel - move o pincel até(coordenada x,y dentro do plano cartesiano)*/
+    pincel.lineTo(200, 400);
+    /*Indica a direção que o pincel deve se mover(traçar uma linha) a partir da coordenada x até a coordenada y*/
+    pincel.lineTo(400, 400);
+    /*Indica a direção que o pincel deve se mover(traçar uma linha) a partir da coordenada x até a coordenada y - Repete o traçado só que dessa vez da coordenada */
+    pincel.fill();
+    /*preenche a figura com os atributos de fillStyle
+*/
+</script>

@@ -1,0 +1,49 @@
+<canvas width="600"  height="400"></canvas>
+<!-- No mundo html, define o canvas fora do script -->
+<!-- Já vimos isso anteriormente, quando pegamos o clique do mouse em um botão do nosso HTML, para dentro do JavaScript! Esse tipo de função é o que chamamos de callback.  -->
+
+<script>
+
+	/*o comando document.querySelector irá trazer o canvas para dentro do javascript*/
+
+    var tela = document.querySelector('canvas');
+
+    // definimos também, uma variável pincel, especificando o contexto da variável tela (canvas) com o getContext
+
+    var pincel = tela.getContext('2d');
+
+    // A definição da cor do pincel é usada no atributo fillStyle
+
+    pincel.fillStyle = 'grey';
+
+    // O comando fillRect, estabelece a área em que será aplicada o pincel
+
+    pincel.fillRect(0, 0, 600, 400);
+
+    // Criaremos um alerta para o usuário
+    
+    function exibeAlerta(evento) {
+
+       alert('Cliquei');
+       console.log(evento);
+
+       // Neste caso, evento é um parâmetro passado dentro da função exibeAlerta mostrando no console a posição clicada dentro do canvas w e y
+
+    }
+
+    // Para que o alerta seja exibido, temos que chamar a função:
+
+    // exibeAlerta();
+
+    // Assim, conectaremos o exibeAlerta ao onClick: a função exibealerta está sendo chamada dentro da tela a partir da interação do usuário através do onclik.
+
+    tela.onclick = exibeAlerta;
+
+</script>
+
+<!-- Antes de aprendermos a obter estas informações, vamos recapitular:
+
+Criamos uma função chama exibeAlerta;
+Ela recebe como parâmetro um evento;
+Em seu bloco, ela exibe o alerta 'Cliquei' apenas, e faz um console.log(evento); -->
+<!-- Se chamarmos o exibeAlerta, temos que passar um parâmetro, mas não temos como saber de antemão qual ponto da tela será clicado. Assim, quem chama essa função é, exclusivamente, o navegador, ele quem tem o parâmetro que trará para nós as coordenadas da posição do cursor no momento do clique. -->

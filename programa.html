@@ -1,0 +1,18 @@
+<canvas width="600" height="400"></canvas>
+<!-- O canvas é uma tag onde é determinada a largura e a altura da área que irá conter a imagem -->
+
+<script>
+
+    var tela = document.querySelector("canvas"); 
+    /*O document.querySelector tras pra dentro do mundo java a tag canvas*/
+    
+    var pincel = tela.getContext('2d'); 
+    /*dentro da variável pincel estamos pegando a variável tela e atribuindo a ela uma qualidade com o getContext ("2d", "3d"...)*/
+
+    pincel.fillStyle = 'lightgrey';  
+    /*O atributo de cor deve sempre vir antes do retângulo (fillRect)*/
+    
+    pincel.fillRect(0, 0, 800, 600); 
+    /*O retângulo (fillRect) deve sempre obedecer às dimensões do canvas*/
+
+</script>
